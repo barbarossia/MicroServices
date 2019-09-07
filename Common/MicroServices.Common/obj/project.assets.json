@@ -54,34 +54,6 @@
           "lib/netstandard2.0/EventStore.ClientAPI.NetCore.dll": {}
         }
       },
-      "Microsoft.Diagnostics.Tracing.EventRegister/1.1.28": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Diagnostics.Tracing.EventRegister.targets": {}
-        }
-      },
-      "Microsoft.Diagnostics.Tracing.EventSource/1.1.28": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Diagnostics.Tracing.EventRegister": "1.1.28",
-          "Microsoft.Diagnostics.Tracing.EventSource.Redist": "1.1.28"
-        },
-        "compile": {
-          "lib/net40/_._": {}
-        },
-        "runtime": {
-          "lib/net40/_._": {}
-        }
-      },
-      "Microsoft.Diagnostics.Tracing.EventSource.Redist/1.1.28": {
-        "type": "package",
-        "compile": {
-          "lib/net46/Microsoft.Diagnostics.Tracing.EventSource.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Microsoft.Diagnostics.Tracing.EventSource.dll": {}
-        }
-      },
       "Microsoft.Extensions.Logging.Abstractions/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1838,60 +1810,6 @@
         "eventstore.clientapi.netcore.4.1.0.23.nupkg.sha512",
         "eventstore.clientapi.netcore.nuspec",
         "lib/netstandard2.0/EventStore.ClientAPI.NetCore.dll"
-      ]
-    },
-    "Microsoft.Diagnostics.Tracing.EventRegister/1.1.28": {
-      "sha512": "VXTPYySeOmpMFejW2t4uau3t5h92LYKT9zM3kR06qeUNM9vQxG3S5nB6EhuKyf+F7Ze92Y6614MvjkxH14NJkQ==",
-      "type": "package",
-      "path": "microsoft.diagnostics.tracing.eventregister/1.1.28",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "build/Microsoft.Diagnostics.Tracing.EventRegister.targets",
-        "build/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "build/eventRegister.exe",
-        "content/net35/_EventRegisterUsersGuide.docx",
-        "content/net40/_EventRegisterUsersGuide.docx",
-        "content/portable-net45+win8+wpa81/_EventRegisterUsersGuide.docx",
-        "microsoft.diagnostics.tracing.eventregister.1.1.28.nupkg.sha512",
-        "microsoft.diagnostics.tracing.eventregister.nuspec"
-      ]
-    },
-    "Microsoft.Diagnostics.Tracing.EventSource/1.1.28": {
-      "sha512": "qvaf1chd3Z2GBBfqSIyc/CQtX55DAhhT+ptfM0dhk6v4CHvSozpFkeVVeIZFNGR315/V7eEguKtjMCaCw6iLcQ==",
-      "type": "package",
-      "path": "microsoft.diagnostics.tracing.eventsource/1.1.28",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "content/_EventSourceUsersGuide.docx",
-        "lib/net35/_._",
-        "lib/net40/_._",
-        "lib/portable-net45+win8+wpa81/_._",
-        "microsoft.diagnostics.tracing.eventsource.1.1.28.nupkg.sha512",
-        "microsoft.diagnostics.tracing.eventsource.nuspec"
-      ]
-    },
-    "Microsoft.Diagnostics.Tracing.EventSource.Redist/1.1.28": {
-      "sha512": "pn07chRDMdeug9sHbuNlAEZG8ZN3zKgE07IMJG7qPeoQlX6ve01rKTwknKCY/2CVacRP78ONzykV8am84gxc2g==",
-      "type": "package",
-      "path": "microsoft.diagnostics.tracing.eventsource.redist/1.1.28",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "lib/net35/Microsoft.Diagnostics.Tracing.EventSource.XML",
-        "lib/net35/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "lib/net40/Microsoft.Diagnostics.Tracing.EventSource.XML",
-        "lib/net40/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "lib/net46/Microsoft.Diagnostics.Tracing.EventSource.XML",
-        "lib/net46/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "lib/portable-win8+wpa81/Microsoft.Diagnostics.Tracing.EventSource.XML",
-        "lib/portable-win8+wpa81/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "microsoft.diagnostics.tracing.eventsource.redist.1.1.28.nupkg.sha512",
-        "microsoft.diagnostics.tracing.eventsource.redist.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/1.0.0": {
@@ -6263,7 +6181,6 @@
       "EasyNetQ-dotnet-core >= 2.0.2-radicalgeek-netc0001",
       "EventStore.ClientAPI.NetCore >= 4.1.0.23",
       "MicroServices.Common.General >= 1.0.0",
-      "Microsoft.Diagnostics.Tracing.EventSource >= 1.1.28",
       "Microsoft.NETCore.App >= 2.2.0",
       "NewId >= 3.0.2",
       "Newtonsoft.Json >= 12.0.2",
@@ -6322,10 +6239,6 @@
             "target": "Package",
             "version": "[4.1.0.23, )"
           },
-          "Microsoft.Diagnostics.Tracing.EventSource": {
-            "target": "Package",
-            "version": "[1.1.28, )"
-          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -6356,27 +6269,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Diagnostics.Tracing.EventSource 1.1.28' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Diagnostics.Tracing.EventSource",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Diagnostics.Tracing.EventSource.Redist 1.1.28' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Diagnostics.Tracing.EventSource.Redist",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    }
-  ]
+  }
 }
