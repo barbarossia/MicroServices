@@ -26,6 +26,7 @@ namespace Products.Service.Controllers
         }
 
         [HttpPost]
+        
         public ActionResult Post(CreateProductCommand cmd)
         {
             if (string.IsNullOrWhiteSpace(cmd.Name))
@@ -36,7 +37,7 @@ namespace Products.Service.Controllers
                     ReasonPhrase = "Missing product code"
                 };
                 //throw new HttpResponseException(response);
-                
+                return BadRequest(response);
             }
 
             try
@@ -45,8 +46,7 @@ namespace Products.Service.Controllers
                 handler.Handle(command);
 
                 var link = new Uri(string.Format("http://localhost:8181/api/products/{0}", command.Id));
-                //return Created<CreateProduct>(link, command);
-                return null;
+                return Created(link, command);
             }
             catch (AggregateNotFoundException)
             {
@@ -69,6 +69,7 @@ namespace Products.Service.Controllers
                     ReasonPhrase = "Missing product code"
                 };
                 //throw new HttpResponseException(response);
+                return BadRequest(response);
             }
 
             try

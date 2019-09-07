@@ -10,6 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Products.Service.MicroServices.Products.Handlers;
+using MicroServices.Common.MessageBus;
+using MicroServices.Common.Repository;
+using EasyNetQ;
+using EventStore.ClientAPI;
+using System.Net;
 
 namespace Products.Service
 {
@@ -25,6 +31,7 @@ namespace Products.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureHandlers();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -43,6 +50,20 @@ namespace Products.Service
 
             app.UseHttpsRedirection();
             app.UseMvc();
+        }
+
+        private void ConfigureHandlers()
+        {
+            var bus = new RabbitMqBus(RabbitHutch.CreateBus("host=192.168.1.105:5673;username=guest;password=guest"));
+            ServiceLocator.Bus = bus;
+
+            //Should get this from a config setting instead of hardcoding it.
+            var connectionString = "ConnectTo=tcp://admin:changeit@192.168.1.105:1113; Gossip Timeout = 500";
+            var eventStoreConnection = EventStoreConnection.Create(connectionString);
+            eventStoreConnection.ConnectAsync().Wait();
+            var repository = new EventStoreRepository(eventStoreConnection, bus);
+            
+            ServiceLocator.ProductCommands = new ProductCommandHandlers(repository);
         }
     }
 }
