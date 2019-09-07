@@ -1,9 +1,0 @@
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/bin/Debug/netcoreapp2.2/MicroServices.Common.General.deps.json
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/bin/Debug/netcoreapp2.2/MicroServices.Common.General.dll
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/bin/Debug/netcoreapp2.2/MicroServices.Common.General.pdb
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.csprojAssemblyReference.cache
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.csproj.CoreCompileInputs.cache
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.AssemblyInfoInputs.cache
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.AssemblyInfo.cs
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.dll
-/Users/barbarossia/MicroServices/Common/MicroServices.Common.General/obj/Debug/netcoreapp2.2/MicroServices.Common.General.pdb
