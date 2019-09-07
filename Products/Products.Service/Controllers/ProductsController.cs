@@ -16,10 +16,6 @@ namespace Products.Service.Controllers
     {
         private readonly ProductCommandHandlers handler;
 
-        public ProductsController()
-            : this(ServiceLocator.ProductCommands)
-        {}
-
         public ProductsController(ProductCommandHandlers handler)
         {
             this.handler = handler;
@@ -45,7 +41,7 @@ namespace Products.Service.Controllers
                 var command = new CreateProduct(Guid.NewGuid(), cmd.Name, cmd.Description, cmd.Price);
                 handler.Handle(command);
 
-                var link = new Uri(string.Format("http://localhost:8181/api/products/{0}", command.Id));
+                var link = new Uri(string.Format("http://localhost:5001/api/products/{0}", command.Id));
                 return Created(link, command);
             }
             catch (AggregateNotFoundException)

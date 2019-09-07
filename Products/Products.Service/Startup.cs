@@ -31,7 +31,20 @@ namespace Products.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ConfigureHandlers();
+            //ConfigureHandlers();
+            services.AddSingleton<ProductCommandHandlers>(sp =>
+            {
+                var bus = new RabbitMqBus(RabbitHutch.CreateBus("host=192.168.1.105:5673;username=guest;password=guest"));
+
+
+                //Should get this from a config setting instead of hardcoding it.
+                var connectionString = "ConnectTo=tcp://admin:changeit@192.168.1.105:1113; Gossip Timeout = 500";
+                var eventStoreConnection = EventStoreConnection.Create(connectionString);
+                eventStoreConnection.ConnectAsync().Wait();
+                var repository = new EventStoreRepository(eventStoreConnection, bus);
+
+                return new ProductCommandHandlers(repository);
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -62,7 +75,7 @@ namespace Products.Service
             var eventStoreConnection = EventStoreConnection.Create(connectionString);
             eventStoreConnection.ConnectAsync().Wait();
             var repository = new EventStoreRepository(eventStoreConnection, bus);
-            
+
             ServiceLocator.ProductCommands = new ProductCommandHandlers(repository);
         }
     }
