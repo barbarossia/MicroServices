@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.Common.Genera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.Common", "Common\MicroServices.Common\MicroServices.Common.csproj", "{AF51EC57-4D91-44D2-93EC-885EE45B4B69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.ReadModels.Service", "Products\Products.ReadModels.Service\Products.ReadModels.Service.csproj", "{5812105C-3EF8-4D38-B96B-F110010E58D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
