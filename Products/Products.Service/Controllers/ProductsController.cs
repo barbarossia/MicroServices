@@ -54,7 +54,7 @@ namespace Products.Service.Controllers
             }
         }
 
-        [HttpPut("api/products/{id:guid}")]
+        [HttpPut("{id}")]
         public ActionResult Put(Guid id, AlterProductCommand cmd)
         {
             if (string.IsNullOrWhiteSpace(cmd.Name))

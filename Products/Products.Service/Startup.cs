@@ -34,7 +34,7 @@ namespace Products.Service
             //ConfigureHandlers();
             services.AddSingleton<ProductCommandHandlers>(sp =>
             {
-                var bus = new RabbitMqBus(RabbitHutch.CreateBus("host=192.168.1.105:5673;username=guest;password=guest"));
+                var bus = new RabbitMqBus(RabbitHutch.CreateBus("host=192.168.1.105;username=test;password=test"));
 
 
                 //Should get this from a config setting instead of hardcoding it.
@@ -63,20 +63,6 @@ namespace Products.Service
 
             app.UseHttpsRedirection();
             app.UseMvc();
-        }
-
-        private void ConfigureHandlers()
-        {
-            var bus = new RabbitMqBus(RabbitHutch.CreateBus("host=192.168.1.105:5673;username=guest;password=guest"));
-            ServiceLocator.Bus = bus;
-
-            //Should get this from a config setting instead of hardcoding it.
-            var connectionString = "ConnectTo=tcp://admin:changeit@192.168.1.105:1113; Gossip Timeout = 500";
-            var eventStoreConnection = EventStoreConnection.Create(connectionString);
-            eventStoreConnection.ConnectAsync().Wait();
-            var repository = new EventStoreRepository(eventStoreConnection, bus);
-
-            ServiceLocator.ProductCommands = new ProductCommandHandlers(repository);
         }
     }
 }
