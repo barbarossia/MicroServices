@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.Common.Genera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServices.Common", "Common\MicroServices.Common\MicroServices.Common.csproj", "{AF51EC57-4D91-44D2-93EC-885EE45B4B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.ReadModels.Service", "Products\Products.ReadModels.Service\Products.ReadModels.Service.csproj", "{5812105C-3EF8-4D38-B96B-F110010E58D6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{BF86B81D-3AF8-43DB-85EF-2850F4B4B868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.ReadModels.Service", "Products\Products.ReadModels.Service\Products.ReadModels.Service.csproj", "{5A7DFACF-C15A-4717-8F9D-30F4AB727648}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,5 +76,20 @@ Global
 		{AF51EC57-4D91-44D2-93EC-885EE45B4B69}.Release|x64.Build.0 = Release|Any CPU
 		{AF51EC57-4D91-44D2-93EC-885EE45B4B69}.Release|x86.ActiveCfg = Release|Any CPU
 		{AF51EC57-4D91-44D2-93EC-885EE45B4B69}.Release|x86.Build.0 = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|x64.Build.0 = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Debug|x86.Build.0 = Debug|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|x64.ActiveCfg = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|x64.Build.0 = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|x86.ActiveCfg = Release|Any CPU
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A7DFACF-C15A-4717-8F9D-30F4AB727648} = {BF86B81D-3AF8-43DB-85EF-2850F4B4B868}
 	EndGlobalSection
 EndGlobal

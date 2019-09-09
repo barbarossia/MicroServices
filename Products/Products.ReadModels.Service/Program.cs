@@ -19,6 +19,7 @@ namespace Products.ReadModels.Service
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://localhost:8181")
                 .UseStartup<Startup>();
     }
 }
