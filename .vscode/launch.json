@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Products/Products.ReadModels.Service/bin/Debug/netcoreapp2.2/Products.ReadModels.Service.dll",
+            "program": "${workspaceFolder}/Sales/Sales.ReadModels.Service/bin/Debug/netcoreapp2.2/Sales.ReadModels.Service.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Products/Products.ReadModels.Service",
+            "cwd": "${workspaceFolder}/Sales/Sales.ReadModels.Service",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
