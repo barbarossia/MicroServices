@@ -35,6 +35,7 @@ namespace Sales.Service.MicroServices.Product.View
             var transformedDtos = ProductsProducts.GetProducts().Select(p => new Domain.Product
             {
                 Id = p.Id,
+                Description = p.Description,
                 Price = p.Price
             });
             foreach (var p in transformedDtos)

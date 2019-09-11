@@ -22,7 +22,7 @@ namespace MicroServices.Common.MessageBus
 
         private void InitializeBus()
         {
-            var bus = RabbitHutch.CreateBus("host=localhost");
+            var bus = RabbitHutch.CreateBus("host=192.168.1.105;username=test;password=test");
             subscription = bus.Subscribe<PublishedMessage>(listenerName, m => handler(), q => q.WithTopic(topic));
         }
 
